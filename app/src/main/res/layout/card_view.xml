@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background = "#e0e0e0"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:layout_margin="5dp"
+        android:elevation="5dp"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
+
+            <ImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_above="@+id/name"
+                android:layout_margin="5dp"
+                android:src="@drawable/visitor"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:scaleType="fitXY"/>
+
+
+
+            <TextView
+                android:id="@+id/name_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="30dp"
+                android:text="Name: "
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:textColor="#4c4c4c"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@id/name_view"
+                android:layout_marginBottom="30dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:textColor="#4c4c4c"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/mobile_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile: "
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textStyle="bold"
+                android:textColor="#4c4c4c"
+                android:layout_marginBottom="2dp"
+                android:textSize="15dp"
+                android:layout_alignBaseline="@+id/mbnumber"
+                android:layout_alignBottom="@+id/mbnumber"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/mbnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textColor="#4c4c4c"
+                android:layout_toRightOf="@id/mobile_view"
+                android:layout_marginBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="10dp"
+                android:textSize="15dp"
+                />
+
+            <TextView
+                android:id="@+id/idnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#4c4c4c"
+                android:layout_alignEnd="@+id/exit"
+                android:layout_alignRight="@+id/exit"
+                android:layout_centerVertical="true"
+                android:textSize="22dp"
+                android:layout_marginEnd="12dp"/>
+
+            <TextView
+                android:id="@+id/idnum_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#4c4c4c"
+                android:layout_toLeftOf="@id/idnum"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:text="ID:"
+                android:textSize="22dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp" />
+
+
+
+            <Button
+                android:id="@+id/exit"
+                android:layout_width="wrap_content"
+                android:layout_height="42dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/exitbutton"
+                android:textColor="#FFFFFF"
+                android:elevation="5dp"
+                android:text="Exit" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

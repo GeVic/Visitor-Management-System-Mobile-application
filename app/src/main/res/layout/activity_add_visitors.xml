@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_back"
+
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="5.0"
+    tools:context="com.example.android.visitormanagement.AddVisitors">
+
+
+    <AutoCompleteTextView
+        android:id="@+id/mail_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:ems="12"
+        android:hint="Whom to Visit"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textColor="#424242"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/Card_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:ems="12"
+        android:hint="Card No."
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:textColor="#424242"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/Visitorname_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:ems="12"
+        android:hint="Name"
+        android:imeOptions="actionDone"
+        android:inputType="textPersonName"
+        android:textColor="#424242"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/Contact_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:ems="12"
+        android:hint="Mobile number"
+        android:imeOptions="actionDone"
+        android:inputType="phone"
+        android:textColor="#424242"
+        android:textColorHint="#FFFFFF" />
+
+    <Spinner
+        android:id="@+id/Purpose_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:dropDownWidth="fill_parent"
+        android:focusableInTouchMode="true"
+        android:spinnerMode="dropdown" />
+
+    <ImageView
+        android:id="@+id/userimage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/imageborder"
+        android:layerType="software"
+        android:onClick="takePicture"
+        android:scaleType="centerInside"
+        android:src="@drawable/photo_camera" />
+
+    <TextView
+        android:id="@+id/change_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="true"
+        android:onClick="takePicture"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/exitbutton"
+        android:clickable="true"
+        android:onClick="AddClick"
+        android:padding="16dp"
+        android:text="Add Visitor"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context="com.example.android.visitormanagement.activity_login">
+
+    <ImageView
+        android:id="@+id/bennett_logo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/bennett"
+        android:padding="16dp"
+        android:layout_marginTop="40dp" />
+
+    <EditText
+        android:id="@+id/username_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textColor="#424242"
+        android:layout_gravity="center_horizontal"
+        android:textColorHint="#BDBDBD"
+        android:ems="10"
+        android:padding="16dp"
+        android:hint="Username"  />
+
+    <EditText
+        android:id="@+id/password_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:textColor="#424242"
+        android:layout_gravity="center_horizontal"
+        android:textColorHint="#BDBDBD"
+        android:ems="10"
+        android:padding="16dp"
+        android:hint="Password"  />
+
+    <Button
+        android:id="@+id/Login_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:background="#D32F2F"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:onClick="LoginClick" />
+
+    <TextView
+        android:id="@+id/Forgot_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password ?"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:textColor="#424242"
+        android:onClick="getSecret"
+        />
+
+</LinearLayout>

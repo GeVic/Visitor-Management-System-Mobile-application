@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path name="Visitors_Images" path="Android/data/com.example.android.visitormanagement/files/Pictures" />
+
+</Paths>
