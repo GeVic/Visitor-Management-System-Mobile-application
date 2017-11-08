@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.visitormanagement.current_visitors">
+    tools:context="edu.bennett.tachyons.vms.current_visitors">
 
 
     <include layout="@layout/content_current_visitors" />

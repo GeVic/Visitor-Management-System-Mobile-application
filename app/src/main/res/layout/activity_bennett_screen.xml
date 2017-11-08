@@ -5,7 +5,7 @@
     android:background="#FFFFFF"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.example.android.visitormanagement.bennett_screen">
+    tools:context="edu.bennett.tachyons.vms.bennett_screen">
 
     <ImageView
         android:layout_width="230dp"

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    tools:context="com.example.android.visitormanagement.activity_login">
+    tools:context="edu.bennett.tachyons.vms.activity_login">
 
     <ImageView
         android:id="@+id/bennett_logo"
@@ -46,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="32dp"
-        android:background="#D32F2F"
+        android:background="@drawable/exitbutton"
         android:text="Login"
         android:textColor="#FFFFFF"
         android:textStyle="bold"

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#e0e0e0"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.android.visitormanagement.current_visitors"
+    tools:context="edu.bennett.tachyons.vms.current_visitors"
     tools:showIn="@layout/activity_current_visitors">
 
     <LinearLayout

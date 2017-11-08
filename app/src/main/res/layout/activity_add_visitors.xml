@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_back"
-
     android:clickable="true"
     android:focusableInTouchMode="true"
     android:gravity="center"
     android:orientation="vertical"
-    android:weightSum="5.0"
-    tools:context="com.example.android.visitormanagement.AddVisitors">
-
+    android:weightSum="7.0"
+    tools:context="edu.bennett.tachyons.vms.AddVisitors">
 
     <AutoCompleteTextView
         android:id="@+id/mail_view"
-        android:layout_width="fill_parent"
+        android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
         android:layout_weight="1"
         android:ems="12"
         android:hint="Whom to Visit"
@@ -32,10 +29,10 @@
 
     <EditText
         android:id="@+id/Card_view"
-        android:layout_width="fill_parent"
+        android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:layout_weight="1"
         android:ems="12"
         android:hint="Card No."
@@ -46,10 +43,10 @@
 
     <EditText
         android:id="@+id/Visitorname_view"
-        android:layout_width="fill_parent"
+        android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:layout_weight="1"
         android:ems="12"
         android:hint="Name"
@@ -59,11 +56,39 @@
         android:textColorHint="#FFFFFF" />
 
     <EditText
-        android:id="@+id/Contact_view"
-        android:layout_width="fill_parent"
+        android:id="@+id/add_view"
+        android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:ems="12"
+        android:hint="Address"
+        android:imeOptions="actionDone"
+        android:inputType="textPostalAddress"
+        android:textColor="#424242"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/org"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp"
+        android:layout_weight="1"
+        android:ems="12"
+        android:hint="Organisation"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:textColor="#424242"
+        android:textColorHint="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/Contact_view"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="4dp"
         android:layout_weight="1"
         android:ems="12"
         android:hint="Mobile number"
@@ -74,9 +99,9 @@
 
     <Spinner
         android:id="@+id/Purpose_view"
-        android:layout_width="fill_parent"
+        android:layout_width="300dp"
         android:layout_height="0dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         android:layout_weight="1"
         android:clickable="true"
         android:dropDownWidth="fill_parent"
@@ -85,8 +110,9 @@
 
     <ImageView
         android:id="@+id/userimage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/imageborder"
         android:layerType="software"
         android:onClick="takePicture"
@@ -107,13 +133,15 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/exitbutton"
         android:clickable="true"
         android:onClick="AddClick"
-        android:padding="16dp"
+        android:padding="8dp"
         android:text="Add Visitor"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
+
+
 </LinearLayout>
