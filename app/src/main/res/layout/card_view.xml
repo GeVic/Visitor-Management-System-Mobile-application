@@ -34,7 +34,6 @@
                 android:scaleType="fitXY"/>
 
 
-
             <TextView
                 android:id="@+id/name_view"
                 android:layout_width="wrap_content"
@@ -123,13 +122,13 @@
                 android:id="@+id/exit"
                 android:layout_width="wrap_content"
                 android:layout_height="42dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_alignParentEnd="true"
                 android:background="@drawable/exitbutton"
                 android:textColor="#FFFFFF"
                 android:elevation="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentEnd="true"
                 android:text="Exit" />
 
 

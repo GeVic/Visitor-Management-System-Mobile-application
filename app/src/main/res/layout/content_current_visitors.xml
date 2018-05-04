@@ -1,66 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#e0e0e0"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="edu.bennett.tachyons.vms.current_visitors"
-    tools:showIn="@layout/activity_current_visitors">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/app_back"
+    android:fillViewport="true"
+    android:scrollbars="vertical"
+    android:noHistory="true">
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingBottom="4dp"
-        android:paddingRight="3dp"
-        android:elevation="5dp"
-        android:paddingTop="1dp"
-        android:paddingLeft="1dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        >
+        android:layout_height="match_parent"
+        android:background="#e0e0e0"
+        android:clickable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="edu.bennett.tachyons.vms.current_visitors">
 
-        <SearchView
-            android:id="@+id/search_view"
-            android:theme="@style/search_theme"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:iconifiedByDefault="false"
-            android:elevation="2dp"
-            android:queryHint="Search"
-            android:background="#ffffff"
-            android:focusable="false"
-            android:inputType="textPersonName"
-            android:searchIcon="@drawable/icon_search"/>
-    </LinearLayout>
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:elevation="6dp"
+            android:orientation="horizontal"
+            android:background="@color/cardview_shadow_end_color"
+            android:paddingBottom="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:paddingTop="1dp"
+            android:weightSum="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:background="#e0e0e0"
-        android:layout_height="match_parent">
+            <SearchView
+                android:id="@+id/search_view"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="0.98"
+                android:background="#ffffff"
+                android:queryBackground="@color/cardview_light_background"
+                android:iconifiedByDefault="false"
+                android:inputType="textPersonName"
+                android:queryHint="Search Visitor"
+                android:searchIcon="@drawable/search_icon"
+                android:closeIcon="@drawable/close_icon"
+                android:theme="@style/search_theme" />
+        </LinearLayout>
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:paddingRight="2dp"
-            android:paddingLeft="2dp"
             android:layout_height="match_parent"
-            tools:context=".CardViewActivity">
+            android:background="#e0e0e0">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/my_recycler_view"
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scrollbars="vertical"/>
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                tools:context=".CardViewActivity">
 
-        </RelativeLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/my_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusable="true"
+                    android:scrollbars="vertical" />
+
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
-
+</ScrollView>
+<!-- This file could be used for the recycler view reference -->

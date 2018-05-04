@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@android:color/transparent"/>
-    <stroke android:width="2dp" android:color="#FFFFFF" />
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="#FFFFFF"
+    tools:targetApi="lollipop">
+    <item>
+        <shape>
+            <solid android:color="@color/basicRed" />
 
-    <padding android:left="0dp" android:top="16dp" android:right="0dp" android:bottom="16dp" />
-</shape>
+            <padding
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+</ripple>

@@ -18,7 +18,7 @@
         android:allowBackup="true"
         android:icon="@drawable/bennett_logo"
         android:label="Visitor Management"
-
+        android:name="android.support.multidex.MultiDexApplication"
         android:roundIcon="@drawable/bennett_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -44,18 +44,19 @@
         </activity>
         <activity
             android:name="edu.bennett.tachyons.vms.activity_login"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name="edu.bennett.tachyons.vms.visitors_option"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name="edu.bennett.tachyons.vms.AddVisitors"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"/>
         <activity
             android:name="edu.bennett.tachyons.vms.current_visitors"
-            android:label="@string/title_activity_current_visitors"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

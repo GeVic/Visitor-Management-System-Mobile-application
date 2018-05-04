@@ -1,147 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/app_back"
-    android:clickable="true"
-    android:focusableInTouchMode="true"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:weightSum="7.0"
+    android:background="#EEEEEE"
+    android:fillViewport="true"
+    android:noHistory="true"
+    android:scrollbars="vertical"
     tools:context="edu.bennett.tachyons.vms.AddVisitors">
 
-    <AutoCompleteTextView
-        android:id="@+id/mail_view"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_weight="1"
-        android:ems="12"
-        android:hint="Whom to Visit"
-        android:imeOptions="actionDone"
-        android:inputType="textPersonName"
-        android:textColor="#424242"
-        android:textColorHint="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/Card_view"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="4dp"
-        android:layout_weight="1"
-        android:ems="12"
-        android:hint="Card No."
-        android:imeOptions="actionDone"
-        android:inputType="number"
-        android:textColor="#424242"
-        android:textColorHint="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/Visitorname_view"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="4dp"
-        android:layout_weight="1"
-        android:ems="12"
-        android:hint="Name"
-        android:imeOptions="actionDone"
-        android:inputType="textPersonName"
-        android:textColor="#424242"
-        android:textColorHint="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/add_view"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="4dp"
-        android:layout_weight="1"
-        android:ems="12"
-        android:hint="Address"
-        android:imeOptions="actionDone"
-        android:inputType="textPostalAddress"
-        android:textColor="#424242"
-        android:textColorHint="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/org"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="4dp"
-        android:layout_weight="1"
-        android:ems="12"
-        android:hint="Organisation"
-        android:imeOptions="actionDone"
-        android:inputType="text"
-        android:textColor="#424242"
-        android:textColorHint="#FFFFFF" />
-
-    <EditText
-        android:id="@+id/Contact_view"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="4dp"
-        android:layout_weight="1"
-        android:ems="12"
-        android:hint="Mobile number"
-        android:imeOptions="actionDone"
-        android:inputType="phone"
-        android:textColor="#424242"
-        android:textColorHint="#FFFFFF" />
-
-    <Spinner
-        android:id="@+id/Purpose_view"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_margin="4dp"
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:clickable="true"
-        android:dropDownWidth="fill_parent"
         android:focusableInTouchMode="true"
-        android:spinnerMode="dropdown" />
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/userimage"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/imageborder"
-        android:layerType="software"
-        android:onClick="takePicture"
-        android:scaleType="centerInside"
-        android:src="@drawable/photo_camera" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
-    <TextView
-        android:id="@+id/change_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        android:onClick="takePicture"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+            <AutoCompleteTextView
+                android:id="@+id/mail_view"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.9"
+                android:hint="Whom to Visit (Optional)"
+                android:backgroundTint="#BDBDBD"
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName"
+                android:textColor="#424242"
+                android:textColorHint="#9E9E9E" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="4dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/exitbutton"
-        android:clickable="true"
-        android:onClick="AddClick"
-        android:padding="8dp"
-        android:text="Add Visitor"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/Card_view"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.9"
+                android:hint="Card No."
+                android:backgroundTint="#BDBDBD"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:textColor="#424242"
+                android:textColorHint="#9E9E9E" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/Visitorname_view"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.9"
+                android:backgroundTint="#BDBDBD"
+                android:hint="Name"
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName"
+                android:textColor="#424242"
+                android:textColorHint="#9E9E9E" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/add_view"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.9"
+                android:backgroundTint="#BDBDBD"
+                android:hint="Address (Optional)"
+                android:imeOptions="actionDone"
+                android:inputType="textPostalAddress"
+                android:textColor="#424242"
+                android:textColorHint="#9E9E9E" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/org"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.9"
+                android:backgroundTint="#BDBDBD"
+                android:hint="Organisation (Optional)"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:textColor="#424242"
+                android:textColorHint="#9E9E9E" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/Contact_view"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.9"
+                android:hint="Mobile number"
+                android:backgroundTint="#BDBDBD"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:textColor="#424242"
+                android:textColorHint="#9E9E9E" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Spinner
+                android:id="@+id/Purpose_view"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="0.9"
+                android:backgroundTint="@color/basicRed"
+                android:clickable="true"
+                android:dropDownWidth="fill_parent"
+                android:focusableInTouchMode="true"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/userimage"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/imageborder"
+            android:backgroundTint="#BDBDBD"
+            android:layerType="software"
+            android:onClick="takePicture"
+            android:scaleType="centerInside"
+            android:src="@drawable/photo_camera" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/change_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:clickable="true"
+                android:onClick="takePicture"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+        </LinearLayout>
 
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="0.8"
+                android:background="@drawable/button"
+                android:clickable="true"
+                android:onClick="AddClick"
+                android:text="Add Visitor"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

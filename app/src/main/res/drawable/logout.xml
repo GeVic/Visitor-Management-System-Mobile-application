@@ -4,16 +4,11 @@
     android:color="#FFFFFF"
     tools:targetApi="lollipop">
     <item>
-        <shape>
-            <solid android:color="#EEEEEE" />
-
-            <padding
-                android:left="1dp"
-                android:right="1dp"
-                android:top="1dp" />
-
-            <corners android:radius="25dp" />
+        <shape
+            android:shape="rectangle">
+            <solid android:color="@color/basicBlue"/>
+            <corners android:bottomRightRadius="15dp"
+                android:topRightRadius="15dp"/>
         </shape>
     </item>
-
 </ripple>

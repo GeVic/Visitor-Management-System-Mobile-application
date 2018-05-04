@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Explode;
 
 /**
  * An bennett full-screen activity that shows and hides the system UI (i.e.
@@ -11,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class bennett_screen extends AppCompatActivity {
 
-    private static final int TIME_OUT = 1000;
+    private static final int TIME_OUT = 500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,19 +21,21 @@ public class bennett_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(bennett_screen.this,activity_login.class);
+                Intent i = new Intent(bennett_screen.this, activity_login.class);
                 finish();
                 startActivity(i);
-                overridePendingTransition(R.anim.slide_in,R.anim.slide_out);
+                Explode explode = new Explode();
+                getWindow().setExitTransition(explode);
             }
-        },TIME_OUT);
+        }, TIME_OUT);
     }
 
     @Override
     public void onBackPressed() {
         // finish() is called in super: we only override this method to be able to override the transition
+        Explode explode = new Explode();
         super.onBackPressed();
-        overridePendingTransition(R.anim.slidein_back,R.anim.slideout_back);
+        getWindow().setExitTransition(explode);
     }
 
 }

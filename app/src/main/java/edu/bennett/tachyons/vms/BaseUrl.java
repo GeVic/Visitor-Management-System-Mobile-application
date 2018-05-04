@@ -8,5 +8,4 @@ package edu.bennett.tachyons.vms;
 public class BaseUrl {
     // Base URl
     public String BASE_URL = "http://10.12.135.93/";
-           // "http://10.12.135.93/";
 }

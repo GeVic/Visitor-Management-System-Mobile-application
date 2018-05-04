@@ -154,6 +154,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         });
 
 
+
     }
 
     // filter for the search view

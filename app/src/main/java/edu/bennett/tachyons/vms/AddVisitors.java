@@ -8,12 +8,14 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.transition.Explode;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +25,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -65,7 +66,6 @@ public class AddVisitors extends AppCompatActivity implements OnItemSelectedList
 
     //Button animation
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
-    private Button take_pic;
     private ProgressDialog pD;
     private String visitee_name;
     private int visitorno;
@@ -332,13 +332,21 @@ public class AddVisitors extends AppCompatActivity implements OnItemSelectedList
         // Calling method of field validation
         if (CheckFieldValidation()) {
 
+            if (org.equals("")) {
+                Org.setText("0");
+            }
+            if (addr.equals("")) {
+                Addr.setText("0");
+            }
+
             if (!clicked) {
                 visitor_ID = "-1";
             }
 
             pD.setMessage("Adding the visitor ...");
             showDialog();
-            // image file to e passed
+
+            // provides image
             final TypedFile image = new TypedFile("multipart/form-data", new File(mCurrentPhotoPath));
             //making object of RestAdapter
             RestAdapter adapter = new RestAdapter.Builder().setEndpoint(UserDetails.BASE_URL).build();
@@ -354,9 +362,20 @@ public class AddVisitors extends AppCompatActivity implements OnItemSelectedList
                         pD.dismiss();
                         Intent i = new Intent(AddVisitors.this, visitors_option.class);
                         Toast.makeText(AddVisitors.this, "Visitor is added successfully", Toast.LENGTH_SHORT).show();
-                        finish();
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
-                        overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
+                        /*new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent i = new Intent(AddVisitors.this, visitors_option.class);
+                                Toast.makeText(AddVisitors.this, "Visitor is added successfully", Toast.LENGTH_SHORT).show();
+                                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(i);
+                                Explode explode = new Explode();
+                                getWindow().setExitTransition(explode);
+                            }
+                        },300);*/
+
 
                     } else // login failure
                     {
@@ -367,7 +386,8 @@ public class AddVisitors extends AppCompatActivity implements OnItemSelectedList
                             pD.dismiss();
                             finish();
                             startActivity(in);
-                            overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
+                            //Explode explode = new Explode();
+                            //getWindow().setExitTransition(explode);
                         }
 
                     }
@@ -395,12 +415,6 @@ public class AddVisitors extends AppCompatActivity implements OnItemSelectedList
         if (cardno.equals("")) {
             valid = false;
             Cardno.setError("Required field");
-        }
-        if (org.equals("")) {
-            Org.setText("0");
-        }
-        if (addr.equals("")) {
-            Addr.setText("0");
         }
         if (mobile.equals("")) {
             valid = false;
@@ -497,7 +511,8 @@ public class AddVisitors extends AppCompatActivity implements OnItemSelectedList
                         pD.dismiss();
                         finish();
                         startActivity(in);
-                        overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
+                        //Explode explode = new Explode();
+                        //getWindow().setExitTransition(explode);
                     }
 
                 }
@@ -505,7 +520,7 @@ public class AddVisitors extends AppCompatActivity implements OnItemSelectedList
 
             @Override
             public void failure(RetrofitError error) {
-                Toast.makeText(AddVisitors.this,"Network Error", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddVisitors.this,"Network is unreachable", Toast.LENGTH_LONG).show();
                 if(pD.isShowing()){
                     pD.cancel();
                 }
@@ -518,7 +533,8 @@ public class AddVisitors extends AppCompatActivity implements OnItemSelectedList
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
+        //Explode explode = new Explode();
+        //getWindow().setExitTransition(explode);
     }
 
 }

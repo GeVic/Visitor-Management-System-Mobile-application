@@ -4,16 +4,20 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Explode;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 
 public class visitors_option extends AppCompatActivity {
 
     //Button animation
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
+    private static final int TIME_OUT = 50;
 
 
     @Override
@@ -25,6 +29,7 @@ public class visitors_option extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
         }
+
     }
 
     // to open the activity of the current visitors
@@ -32,17 +37,38 @@ public class visitors_option extends AppCompatActivity {
         // button animation
         view.startAnimation(buttonClick);
         Intent i = new Intent(visitors_option.this, current_visitors.class);
+        //i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(i);
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        /*new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(visitors_option.this, current_visitors.class);
+                //i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(i);
+                Explode explode = new Explode();
+                getWindow().setExitTransition(explode);
+            }
+        }, TIME_OUT);*/
     }
 
-    // to add the activity of the add activity
+    // to add visitors
     public void add_visitors(View view) {
         // button animation
         view.startAnimation(buttonClick);
         Intent i = new Intent(visitors_option.this, AddVisitors.class);
+        //i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(i);
-        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        /*new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(visitors_option.this, AddVisitors.class);
+                //i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(i);
+                Explode explode = new Explode();
+                getWindow().setExitTransition(explode);
+            }
+        }, TIME_OUT);*/
+
     }
 
     // function check if the permission granted and then enables the button
@@ -59,26 +85,27 @@ public class visitors_option extends AppCompatActivity {
     public void Logout(View view) {
         TokenSaver.deleteToken(getApplicationContext());
         Intent i = new Intent(visitors_option.this, activity_login.class);
-        finish();
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
-        overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
+        /*new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(visitors_option.this, activity_login.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+                Explode explode = new Explode();
+                getWindow().setExitTransition(explode);
+            }
+        }, TIME_OUT);*/
+
 
     }
 
-    // to take the user to the login screen
-    public void Logoutall() {
-        TokenSaver.deleteToken(getApplicationContext());
-        Intent i = new Intent(visitors_option.this, activity_login.class);
-        finish();
-        startActivity(i);
-        overridePendingTransition(R.anim.slidein_back, R.anim.slideout_back);
-
-    }
 
     @Override
     public void onBackPressed() {
-        // finish() is called in super: we only override this method to be able to override the transition
+        //Explode explode = new Explode();
         super.onBackPressed();
-        overridePendingTransition(0,0);
+        //getWindow().setExitTransition(explode);
     }
 }

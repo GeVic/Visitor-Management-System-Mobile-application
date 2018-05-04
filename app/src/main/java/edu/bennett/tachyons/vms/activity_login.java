@@ -1,11 +1,16 @@
 package edu.bennett.tachyons.vms;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Explode;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,6 +22,7 @@ import retrofit.client.Response;
 
 
 public class activity_login extends AppCompatActivity {
+    private static final int TIME_OUT = 50;
 
     private static String token;
     Button loginB;
@@ -36,17 +42,20 @@ public class activity_login extends AppCompatActivity {
         if (token != "") {
             // running the visitor option part
             Intent i = new Intent(activity_login.this, visitors_option.class);
-            finish();
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
-            overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+            //Explode explode = new Explode();
+            //getWindow().setExitTransition(explode);
         } else {
             // Login activity is called
             setContentView(R.layout.activity_login);
+
         }
 
         loginB = (Button) findViewById(R.id.Login_view);
         Username = (EditText) findViewById(R.id.username_view);
         Password = (EditText) findViewById(R.id.password_view);
+
         // process dialogue
         pD = new ProgressDialog(this);
         pD.setCancelable(false);
@@ -62,6 +71,10 @@ public class activity_login extends AppCompatActivity {
 
         //Calling method of field validation
         if (CheckFieldValidation()) {
+            // hide keyboard
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+
             pD.setMessage("Logging in ...");
             showDialog();
 
@@ -83,7 +96,16 @@ public class activity_login extends AppCompatActivity {
                         Intent i = new Intent(activity_login.this, visitors_option.class);
                         finish();
                         startActivity(i);
-                        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+                        /*new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent i = new Intent(activity_login.this, visitors_option.class);
+                                finish();
+                                startActivity(i);
+                                Explode explode = new Explode();
+                                getWindow().setExitTransition(explode);
+                            }
+                        }, TIME_OUT);*/
 
                     } else // login failure
                     {
@@ -99,7 +121,7 @@ public class activity_login extends AppCompatActivity {
                 public void failure(RetrofitError error) {
                     pD.dismiss();
                     String merror = error.getMessage();
-                    Toast.makeText(activity_login.this, "Network Error", Toast.LENGTH_LONG).show();
+                    Toast.makeText(activity_login.this, "Network is unreachable", Toast.LENGTH_LONG).show();
                 }
             });
         }
@@ -137,6 +159,12 @@ public class activity_login extends AppCompatActivity {
     public void onBackPressed() {
         // finish() is called in super: we only override this method to be able to override the transition
         super.onBackPressed();
-        overridePendingTransition(0, 0);
+        /*new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Explode explode = new Explode();
+                getWindow().setExitTransition(explode);
+            }
+        }, 1000);*/
     }
 }

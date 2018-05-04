@@ -1,65 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFF"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/app_back"
+    android:fillViewport="true"
     tools:context="edu.bennett.tachyons.vms.activity_login">
 
-    <ImageView
-        android:id="@+id/bennett_logo"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:src="@drawable/bennett"
-        android:padding="16dp"
-        android:layout_marginTop="40dp" />
-
-    <EditText
-        android:id="@+id/username_view"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:textColor="#424242"
-        android:layout_gravity="center_horizontal"
-        android:textColorHint="#BDBDBD"
-        android:ems="10"
-        android:padding="16dp"
-        android:hint="Username"  />
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:weightSum="1">
 
-    <EditText
-        android:id="@+id/password_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:textColor="#424242"
-        android:layout_gravity="center_horizontal"
-        android:textColorHint="#BDBDBD"
-        android:ems="10"
-        android:padding="16dp"
-        android:hint="Password"  />
+        <ImageView
+            android:id="@+id/bennett_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:padding="16dp"
+            android:src="@drawable/splash_logo" />
 
-    <Button
-        android:id="@+id/Login_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/exitbutton"
-        android:text="Login"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:onClick="LoginClick" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
-    <TextView
-        android:id="@+id/Forgot_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password ?"
-        android:layout_gravity="center_horizontal"
-        android:padding="16dp"
-        android:textColor="#424242"
-        android:onClick="getSecret"
-        />
+            <EditText
+                android:id="@+id/username_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.8"
+                android:hint="Username"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColor="#424242"
+                android:textColorHint="#BDBDBD"
+                android:focusable="true"
+                android:textCursorDrawable="@drawable/cursor"
+                android:drawableLeft="@drawable/user_svg"
+                android:background="@drawable/edittext"/>
+        </LinearLayout>
 
-</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/password_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:ems="10"
+                android:hint="Password"
+                android:textCursorDrawable="@drawable/cursor"
+                android:inputType="textPassword"
+                android:focusable="true"
+                android:padding="16dp"
+                android:textColor="#424242"
+                android:textColorHint="#BDBDBD"
+                android:drawableLeft="@drawable/password"
+                android:clickable="true"
+                android:background="@drawable/edittext" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/Login_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.8"
+                android:onClick="LoginClick"
+                android:text="Login"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:background="@drawable/exitbutton"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

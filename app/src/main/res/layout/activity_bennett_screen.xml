@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#ffffff"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="edu.bennett.tachyons.vms.bennett_screen">
@@ -12,5 +12,4 @@
         android:layout_height="230dp"
         android:scaleType="fitCenter"
         android:src="@drawable/splash_logo" />
-
 </LinearLayout>
