@@ -1,13 +1,43 @@
-# Visitor-Management-System
-It is an mobile application built in android studio for University use. 
+# visitor-management
+Visitor Management System
 
-## Requirements
-- VMS is supported by backend written in php. 
-- Uses retrofit 1.9 for https requests and returns data as json object
-- Requires login and session is maintained using tokens.
+# Running on Local Server
+Make sure you have xampp 7.1.4+ installed.  
 
-## Current Status
-This application is still in testing phase. Current stable version of the code may not be commited or updated.
+### Instructions for xampp (Apache):  
+Clone the repository in your htdocs folder -
+```bash
+git clone https://github.com/nikramakrishnan/visitor-management.git
+```
+**OR**  
+if you have already cloned the repository, run -
+```bash
+git pull
+```
 
-## Contribution
-Any contribution to make code more efficient and clean is appreciated. Open to suggestions and any piece of advice.
+Switch to the `skeleton` branch -
+```bash
+git checkout skeleton
+```
+
+Now, start Apache and MySQL, and create a database named `vms`, if not already exists.  
+
+Now import the `vms.sql` file in the database to create the required table(s).  
+
+The VMS is now ready to work!  
+
+# Credentials
+The default credentials used to login at `index.php` are -  
+
+Username | admin
+-------- | -----
+**Password** | password
+
+Session is maintained as a PHP session (uses cookies), and most requests will return data in `JSON` format (so that the app can understand it easily!)
+
+# Contributing
+Please note that all code must be readable and comments should be used wherever required.  
+Database and table names must be generic easy to understand.
+
+# Current Status
+This branch is a snapshot of the latest stable functionality. visitor-management is **not complete** and **should not be deployed** yet. Please see the `development` branch for the latest information.
